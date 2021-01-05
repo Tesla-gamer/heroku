@@ -10,6 +10,8 @@ const dotenv=require('dotenv');
 
 const cookieParser=require('cookie-parser');
 
+const port=process.env.PORT || 8000;
+
 dotenv.config({ path:'./.env'});
 
 
@@ -44,5 +46,5 @@ app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 
 app.listen(5000,()=>{
- console.log("server started on port 5000");
+ console.log(`server started on port ${port}`);
 })
